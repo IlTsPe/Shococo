@@ -5,6 +5,7 @@ const navItems = document.querySelectorAll('.nav__item');
 
 const openMenu = () => {
 	header.classList.add('header__left-active')
+	console.log(123);
 }
 
 const closeMenu = () => {
@@ -22,9 +23,3 @@ closeBtn.addEventListener('click', closeMenu);
 document.addEventListener('keydown', (e) => {
 	if (e.code === 'Escape') closeMenu();
 });
-
-const parallax = document.querySelector('#parallax');
-
-document.addEventListener('scroll', () => {
-	parallax.style.backgroundPositionY = `-${window.scrollY * 0.1}px`
-})

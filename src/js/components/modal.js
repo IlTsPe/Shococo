@@ -1,21 +1,54 @@
 import { debounce } from "./debounce";
 
-const modal = document.querySelector('.modal');
-const consultationBtn = document.querySelector('.consultation-btn');
-const closeButton = document.querySelector('.modal__close');
-const iconContainer = document.querySelector('.show-hide-password');
-const input = document.querySelector('#password');
-const icon = document.querySelector('svg[data-status="hide"]');
-const view = document.querySelector('.hide-password');
+const btn = document.querySelector('.product__btn');
 const body = document.querySelector('body');
+// const showButton = document.querySelectorAl('#')
 
 
 /* --------Функции для вызова------- */
-const conditions = function (type, hideClass) {
-	input.type = type;
-	icon.classList.toggle(hideClass);
-	view.classList.toggle(hideClass);
-};
+const generateCartProduct = () => {
+	return `
+	<div class="modal modal--hidden" data-overlay>
+	<div class="modal__container">
+		<div class="modal__header">
+			<h3 class="modal__title">РумТибет</h3>
+			<span class="modal__action">Вход в личный кабинет</span>
+		</div>
+		<form class="modal__form">
+			<input type="email" class="modal__email" placeholder="Email">
+			<div class="modal__password">
+				<input type="password" id="password" placeholder="Password">
+				<button class="show-hide-password">
+					<svg data-status="hide">
+						<use xlink:href="#hide"></use>
+					</svg>
+					<svg class="hide-password" data-status="view">
+						<use xlink:href="#view"></use>
+					</svg>
+				</button>
+			</div>
+			<div class="modal__help mb-40">
+				<div class="modal__remember">
+					<label class="checkbox">
+						<input type="checkbox">
+						<div class="checkbox-castom"></div>
+						Запомнить меня
+					</label>
+				</div>
+				<div class="modal__forgot">
+					<a href="404.html">Забыл пароль?</a>
+				</div>
+			</div>
+			<button
+				class="modal__btn btn btn--white-bg btn--green-text btn--bold">Войти</button>
+			<button class="close modal__close">
+				<span class="close-line"></span>
+				<span class="close-line"></span>
+			</button>
+		</form>
+	</div>
+	</div>`;
+}
 
 const closeModal = function () {
 	modal.classList.add('modal--hidden');
@@ -23,43 +56,10 @@ const closeModal = function () {
 };
 
 const openModal = function () {
-	modal.classList.remove('modal--hidden');
+	body.insertAdjacentHTML('afterbegin', generateCartProduct())
 	body.classList.add('body--modal');
 };
 
-const appearancePasswordIcon = function () {
-	this.value < 1 ?
-		iconContainer.style.opacity = 0 :
-		iconContainer.style.opacity = 1;
-}
+btn.addEventListener('click', openModal);
 
 
-/* --------Обработчики событий-------- */
-iconContainer.addEventListener('click', (e) => {
-	e.preventDefault();
-	input.type === 'password' ?
-		conditions('text', 'hide-password') :
-		conditions('password', 'hide-password');
-});
-
-input.addEventListener('input', debounce(appearancePasswordIcon, 150));
-
-consultationBtn.addEventListener('click', (e) => {
-	e.preventDefault();
-	openModal();
-});
-
-modal.addEventListener('click', (e) => {
-	const target = e.target;
-	if (!target.hasAttribute('data-overlay')) return
-	closeModal();
-});
-
-closeButton.addEventListener('click', (e) => {
-	e.preventDefault();
-	closeModal();
-});
-
-document.addEventListener('keydown', (e) => {
-	if (e.code === 'Escape') closeModal();
-});

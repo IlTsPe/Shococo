@@ -1,7 +1,7 @@
 .burger {
 	display: none;
 
-	@media (max-width: 1024px) {
+	@media (max-width: 800px) {
 		position: fixed;
 		top: 40px;
 		right: 5%;
@@ -63,7 +63,7 @@
 		}
 
 
-		@media (max-width:1024px) {
+		@media (max-width:800px) {
 			display: block;
 		}
 	}

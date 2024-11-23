@@ -1,22 +1,23 @@
 .modal {
-	position: fixed;
-	width: 100%;
-	height: 100vh;
+	// position: fixed;
+	// width: 100%;
+	// height: 100vh;
+	display: grid;
+	place-content: center;
 	background-color: #0000008c;
-	z-index: 99;
+	z-index: 999;
 
-	&--hidden {
-		display: none;
-		visibility: hidden;
+	&__header {
+		margin-bottom: 20px;
 	}
 
 	&__container {
 		padding: 60px 45px 40px;
 		display: block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		// position: absolute;
+		// top: 50%;
+		// left: 50%;
+		// transform: translate(-50%, -50%);
 		width: 100%;
 		max-width: 450px;
 		border-radius: 10px;
@@ -25,130 +26,78 @@
 		overflow: hidden;
 	}
 
-	&__header {
-		margin-bottom: var(--50-indent);
-		text-align: center;
-	}
-
-	&__title {
-		margin-bottom: 10px;
-		font-size: var(--fz-24);
-	}
-
-	&__action {
-		font-size: var(--fz-16);
-	}
-
 	&__form {
 		display: flex;
 		flex-direction: column;
-		row-gap: 10px;
+		row-gap: 20px;
+	}
+
+	input,
+	select {
+		width: 100%;
+		border-radius: 5px;
+		font-size: 18px;
+		background-color: var(--wheat);
+		padding: 10px;
+		font-weight: 500;
 	}
 
 	input {
-		padding: 10px;
-		font-size: var(--fz-18);
-		font-weight: 500;
-		width: 100%;
-		border-radius: 5px;
-		color: var(--white);
-		background-color: var(--papa-green);
-
 		&::placeholder {
-			color: var(--white);
-			opacity: 0.3;
+			opacity: 0.7;
 		}
 	}
+}
 
-	&__password {
-		width: 100%;
-		position: relative;
+.succes-modal,
+.fault-modal {
+	opacity: 0;
+	visibility: hidden;
 
-		button {
-			display: flex;
-			position: absolute;
-			top: 50%;
-			right: 15px;
-			transform: translateY(-50%);
-			opacity: 0;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	z-index: 60;
+	background-color: rgba(0, 0, 0, .3);
 
-			svg {
-				width: 20px;
-				height: 20px;
-			}
-		}
-	}
+	transition: linear .2s;
 
-	&__help {
-		margin-top: 10px;
-		@include flex-between-center;
-		font-size: var(--fz-16);
-		font-weight: 500;
-	}
-
-	&__forgot {
-		a {
-			color: rgb(243, 255, 80);
-		}
-	}
-
-	&__btn {
-		margin: 0 auto;
-		width: 70%;
+	&__container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: grid;
+		place-content: center;
 		border-radius: 30px;
 	}
-}
 
-.decor {
-	&-1 {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 90px;
-		height: 4px;
-		background-color: rgb(255, 101, 101);
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding: 50px;
+		font-size: clamp(1.5rem, 1.238rem + 1.31vw, 2.813rem);
+		line-height: 130%;
+		text-align: center;
+		color: var(--black-color);
 	}
 
-	&-2 {
-		position: absolute;
-		top: 0;
-		left: 25%;
-		transform: translateX(-25%);
-		width: 90px;
-		height: 4px;
-		background-color: rgb(255, 239, 96);
-	}
-
-	&-3 {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 90px;
-		height: 4px;
-		background-color: rgb(255, 96, 255);
-	}
-
-	&-4 {
-		position: absolute;
-		top: 0;
-		left: 75%;
-		transform: translateX(-75%);
-		width: 90px;
-		height: 4px;
-		background-color: rgb(117, 67, 255);
-	}
-
-	&-5 {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 90px;
-		height: 4px;
-		background-color: rgb(184, 255, 70);
+	&--active {
+		opacity: 1;
+		visibility: visible;
 	}
 }
 
-.hide-password {
-	display: none;
+.succes-modal__container {
+	background-color: rgb(142, 233, 115);
+	border: solid 5px rgb(15, 150, 44);
+}
+
+.fault-modal__container {
+	background-color: rgb(241, 138, 138);
+	border: solid 5px rgb(167, 64, 64);
 }
