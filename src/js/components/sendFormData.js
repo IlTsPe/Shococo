@@ -17,8 +17,4 @@ export async function postJSONDataForm(data) {
 		console.error("Error:", error);
 		return false;
 	}
-}
-
-document.querySelector('.modal__form').addEventListener('submit', (e) => {
-	e.preventDefault();
-});
+};

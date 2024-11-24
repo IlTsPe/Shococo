@@ -5,12 +5,11 @@ const navItems = document.querySelectorAll('.nav__item');
 
 const openMenu = () => {
 	header.classList.add('header__left-active')
-	console.log(123);
-}
+};
 
 const closeMenu = () => {
 	header.classList.remove('header__left-active');
-}
+};
 
 navItems.forEach(item => {
 	item.addEventListener('click', closeMenu)

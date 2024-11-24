@@ -1,65 +1,84 @@
-import { debounce } from "./debounce";
+import { contactForm } from './contact-form';
+import { formValidation } from './formValidation';
+import { phoneMask } from "./phoneMask";
 
-const btn = document.querySelector('.product__btn');
+const productBtn = document.querySelectorAll('.product__btn');
 const body = document.querySelector('body');
-// const showButton = document.querySelectorAl('#')
 
-
-/* --------Функции для вызова------- */
-const generateCartProduct = () => {
+const generateModalForm = (name) => {
 	return `
-	<div class="modal modal--hidden" data-overlay>
-	<div class="modal__container">
-		<div class="modal__header">
-			<h3 class="modal__title">РумТибет</h3>
-			<span class="modal__action">Вход в личный кабинет</span>
-		</div>
-		<form class="modal__form">
-			<input type="email" class="modal__email" placeholder="Email">
-			<div class="modal__password">
-				<input type="password" id="password" placeholder="Password">
-				<button class="show-hide-password">
-					<svg data-status="hide">
-						<use xlink:href="#hide"></use>
-					</svg>
-					<svg class="hide-password" data-status="view">
-						<use xlink:href="#view"></use>
-					</svg>
+		<div class="modal">
+			<div class="modal__container">
+				<button class="close-btn modal__close-btn">
+					<span class="close-btn__line"></span>
+					<span class="close-btn__line"></span>
 				</button>
-			</div>
-			<div class="modal__help mb-40">
-				<div class="modal__remember">
-					<label class="checkbox">
-						<input type="checkbox">
-						<div class="checkbox-castom"></div>
-						Запомнить меня
-					</label>
+				<div class="modal__header">
+					<h3 class="modal__title">Выберите параметры заказа</h3>
 				</div>
-				<div class="modal__forgot">
-					<a href="404.html">Забыл пароль?</a>
-				</div>
+				<form class="modal__form" action="tg.php" method="post">
+					<input type="text" hidden value="${name}" name="${name}"	id="fountain">
+					<select name="count" id="count">
+						<option disabled hidden selected value="0">Укажите кол-во человек&#42;</option>
+					${name === 'Маленький фонтан' ?
+			`<option value="до 20 человек">До 20 человек</option>
+						<option value="20">20 человек</option>
+						<option value="30">30 человек</option>
+						<option value="40">40 человек</option>
+					</select>` : name === 'Средний фонтан' ?
+				`<option value="50 человек">50 человек</option>
+						<option value="60 человек">60 человек</option>
+						<option value="70 человек">70 человек</option>
+					</select>` : name === 'Большой фонтан' ?
+					`<option value="80">80 человек</option>
+						<option value="90 человек">90 человек</option>
+						<option value="100 человек">100 человек</option>
+						<option value="110 человек">110 человек</option>
+						<option value="120 человек">120 человек</option>
+					</select>` : false}
+					<div class="modal__input-field">
+						<input type="text" id="name" name="name" placeholder="Введите ваше ФИО&#42;" request/>
+						<span class="popup popup-name">Имя должно содержать только буквы русского алфавита</span>
+					</div>
+					<div class="modal__input-field">
+						<input type="tel" id="phone" name="phone" placeholder="Укажите номер телефона&#42;" request/>
+						<span class="popup popup-phone">Неполный номер телефона</span>
+					</div>
+					<input type="email" id="email" name="email" placeholder="Укажите почту" />
+					<button type="submit" class="product__btn modal__btn disabled-button" disabled=true>Отправить заявку</button>
+				</form>
 			</div>
-			<button
-				class="modal__btn btn btn--white-bg btn--green-text btn--bold">Войти</button>
-			<button class="close modal__close">
-				<span class="close-line"></span>
-				<span class="close-line"></span>
-			</button>
-		</form>
-	</div>
-	</div>`;
-}
-
-const closeModal = function () {
-	modal.classList.add('modal--hidden');
-	body.classList.remove('body--modal');
+		</div>
+	`;
 };
 
-const openModal = function () {
-	body.insertAdjacentHTML('afterbegin', generateCartProduct())
+const openModal = function (name) {
+	body.insertAdjacentHTML('afterbegin', generateModalForm(name))
 	body.classList.add('body--modal');
 };
 
-btn.addEventListener('click', openModal);
+productBtn.forEach(btn => {
+	btn.addEventListener('click', (e) => {
+		const fountainSize = e.target.getAttribute('data-name');
+		openModal(fountainSize);
+		const modal = document.querySelector('.modal');
+		// const sendBtn = modal.querySelector('.product__btn');
+		if (modal) {
+			const closeBtn = modal.querySelector('.close-btn');
+			closeBtn.classList.add('close-btn--active')
+			phoneMask();
+			formValidation();
+			contactForm();
 
-
+			const closeModal = function () {
+				modal.remove();
+				body.classList.remove('body--modal');
+			};
+			body.addEventListener('click', (e) => {
+				e.target.classList.contains('modal') ? closeModal() : false
+			});
+			closeBtn.addEventListener('click', closeModal);
+			// sendBtn.addEventListener('click', closeModal);
+		};
+	});
+});

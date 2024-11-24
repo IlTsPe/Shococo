@@ -1,0 +1,40 @@
+.popup {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 90%;
+	left: 2%;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+	padding: 15px;
+	border-radius: 10px;
+	background-image: url(../img/svg/invalid.svg);
+	background-repeat: no-repeat;
+	background-size: 25px;
+	background-position: 5px;
+	background-color: var(--invalid-color);
+	color: var(--white);
+	z-index: 2;
+	transition: ease-in .2s;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		left: 15px;
+		border: 8px solid transparent;
+		border-bottom: 8px solid var(--invalid-color);
+		;
+	}
+
+	&--active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@media(max-width:550px) {
+		font-size: 13px;
+		padding: 10px 15px;
+	}
+}
