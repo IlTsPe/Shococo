@@ -6,9 +6,10 @@ export const contactForm = () => {
 	const fountain = document.getElementById("fountain");
 	const contactPhone = document.getElementById("phone");
 	const contactEmail = document.getElementById("email");
-	const contactSendBtn = document.querySelector(".modal__btn");
+	const modalSendBtn = document.querySelector(".modal__btn");
 
-	const sendsuccessModal = document.querySelector(".success-modal");
+
+	const sendSuccessModal = document.querySelector(".success-modal");
 	const sendFaultModal = document.querySelector(".fault-modal");
 
 	function showStatusSending(modal) {
@@ -28,14 +29,14 @@ export const contactForm = () => {
 		}
 		let res = await postJSONDataForm($data);
 		if (res) {
-			showStatusSending(sendsuccessModal)
+			showStatusSending(sendSuccessModal)
 		}
 		else {
 			showStatusSending(sendFaultModal)
 		}
 	}
 
-	contactSendBtn.addEventListener("click", sendFormData);
+	modalSendBtn.addEventListener("click", sendFormData);
 
 	document.querySelector('.modal__form').addEventListener('submit', (e) => {
 		e.preventDefault();

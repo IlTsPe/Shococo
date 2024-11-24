@@ -22,9 +22,9 @@ const generateModalForm = (name) => {
 						<option disabled hidden selected value="0">Укажите кол-во человек&#42;</option>
 					${name === 'Маленький фонтан' ?
 			`<option value="до 20 человек">До 20 человек</option>
-						<option value="20">20 человек</option>
-						<option value="30">30 человек</option>
-						<option value="40">40 человек</option>
+						<option value="20 человек">20 человек</option>
+						<option value="30 человек">30 человек</option>
+						<option value="40 человек">40 человек</option>
 					</select>` : name === 'Средний фонтан' ?
 				`<option value="50 человек">50 человек</option>
 						<option value="60 человек">60 человек</option>
