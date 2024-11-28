@@ -17,7 +17,7 @@ const generateModalForm = (name) => {
 					<h3 class="modal__title">Выберите параметры заказа</h3>
 				</div>
 				<form class="modal__form" action="tg.php" method="post">
-					<input type="text" hidden value="${name}" name="${name}"	id="fountain">
+					<input type="text" hidden value="${name}" name="${name}" id="fountain">
 					<select name="count" id="count">
 						<option disabled hidden selected value="0">Укажите кол-во человек&#42;</option>
 					${name === 'Маленький фонтан' ?
@@ -30,11 +30,14 @@ const generateModalForm = (name) => {
 						<option value="60 человек">60 человек</option>
 						<option value="70 человек">70 человек</option>
 					</select>` : name === 'Большой фонтан' ?
-					`<option value="80">80 человек</option>
+					`<option value="80 человек">80 человек</option>
 						<option value="90 человек">90 человек</option>
 						<option value="100 человек">100 человек</option>
 						<option value="110 человек">110 человек</option>
 						<option value="120 человек">120 человек</option>
+					</select>` : name === 'Сахарная вата' ?
+						`<option value="от 50 порций">от 50 порций - 8.000</option>
+					<option value="1000 порций">1000 порций - 12.000</option>
 					</select>` : false}
 					<div class="modal__input-field">
 						<input type="text" id="name" name="name" placeholder="Введите ваше ФИО&#42;" request/>
@@ -45,7 +48,7 @@ const generateModalForm = (name) => {
 						<span class="popup popup-phone">Неполный номер телефона</span>
 					</div>
 					<input type="email" id="email" name="email" placeholder="Укажите почту" />
-					<button type="submit" class="product__btn modal__btn disabled-button" disabled=true>Отправить заявку</button>
+					<button type="submit" class="product__btn order-btn modal__btn disabled-button" disabled=true>Отправить заявку</button>
 				</form>
 			</div>
 		</div>

@@ -14,10 +14,10 @@ html {
 body {
 	position: relative;
 	font-family: var(--font-family);
-	font-weight: 600;
+	font-weight: 500;
 	font-size: var(--main-font-size);
 	background-color: var(--white);
-	color: var(--cinder);
+	color: var(--black);
 }
 
 .body--modal {
@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-	max-width: 1210px;
+	max-width: 1440px;
 	margin: 0 auto;
 	padding: 0 15px;
 }
@@ -42,3 +42,7 @@ body {
 @import "./components/modal";
 @import "./components/product";
 @import "./components/popup";
+@import "./components/additional-services";
+@import "./components/additional-product";
+@import "./components/partners";
+@import "./components/contacts";

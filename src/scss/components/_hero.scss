@@ -1,46 +1,52 @@
 .hero {
-	padding-bottom: 50px;
+	padding-bottom: 60px;
+
+	@media screen and (orientation: landscape) {
+		overflow: auto;
+	}
+
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 	background-image: url(../img/main.webp);
+	text-align: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	color: var(--white);
-	text-align: center;
 
 	&__container {
 		margin-top: auto;
-		width: 100%;
-		max-width: 450px;
+	}
 
-		@media(max-width:1024px) {
-			padding-bottom: 50px;
-		}
+	&__wrapper {
+		padding: 20px 10px;
+		width: 100%;
+		max-width: 650px;
+		backdrop-filter: blur(9px) saturate(100%);
+		-webkit-backdrop-filter: blur(9px) saturate(100%);
+		background-color: rgba(40, 29, 17, 0.4);
+		border-radius: 15px;
+		border: 2px solid rgba(255, 255, 255, 0.125);
 	}
 
 	&__main-title {
-		margin-bottom: 10px;
-		font-family: 'NunitoSans';
-		font-size: 72px;
-		font-weight: 700;
-		line-height: 150%;
-		letter-spacing: 1px;
+		margin-bottom: 15px;
+		font-size: var(--fz-90);
+		letter-spacing: 5px;
 		text-transform: uppercase;
 	}
 
 	&__sub-title {
-		margin-bottom: clamp(30px, 6vw, 42px);
-		font-family: 'NunitoSans';
-		font-size: 32px;
-		font-weight: 700;
-		line-height: 150%;
+		margin-bottom: 20px;
+		font-size: var(--fz-32);
+		font-weight: 500;
+		line-height: 110%;
 		letter-spacing: 1px;
 	}
 
 	&__phone {
-		font-size: 40px;
+		font-size: var(--fz-40);
 		margin-bottom: 10px;
 	}
 
@@ -50,7 +56,7 @@
 
 		@media (hover:hover) {
 			&:hover {
-				color: var(--saffron);
+				color: var(--wheat);
 			}
 		}
 	}

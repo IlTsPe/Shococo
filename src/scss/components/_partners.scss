@@ -1,0 +1,29 @@
+.partners {
+	padding-block: 80px;
+	background-color: gray;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		gap: 20px;
+	}
+
+	&__item {
+		width: 230px;
+		height: 230px;
+		background-color: var(--white);
+		display: flex;
+		align-items: center;
+		border-radius: 10px;
+		box-shadow: 0 0 7px;
+		overflow: hidden;
+
+		img {
+			display: block;
+			margin: 0 auto;
+			width: 90%;
+			object-fit: cover;
+		}
+	}
+}

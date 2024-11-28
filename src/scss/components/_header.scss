@@ -13,8 +13,8 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		background-color: rgb(109, 74, 64);
-		box-shadow: 0px 7px 10px rgb(90, 34, 18);
+		background-color: var(--main-color);
+		box-shadow: 0px 5px 10px rgb(126, 70, 54);
 		z-index: 99;
 	}
 
@@ -22,11 +22,6 @@
 		@include flex-between-center;
 		flex-wrap: wrap;
 		transition: all linear 0.2s;
-	}
-
-	&__left {
-		@include flex-between-center;
-		flex-wrap: wrap;
 	}
 
 	.logo {
@@ -59,7 +54,7 @@
 			left: 0;
 			width: 0;
 			height: 2px;
-			background-color: rgb(255, 94, 0);
+			background-color: rgb(252, 75, 75);
 			transition: all ease-in 0.2s;
 		}
 
@@ -70,7 +65,7 @@
 			right: 0;
 			width: 0;
 			height: 2px;
-			background-color: rgb(255, 94, 0);
+			background-color: rgb(255, 238, 81);
 			transition: all ease-in 0.2s;
 		}
 
@@ -88,7 +83,7 @@
 			@media (max-width:800px) {
 				@media (hover:hover) {
 					&:hover {
-						color: black;
+						color: var(--black);
 					}
 
 					&:hover::after,
@@ -146,9 +141,9 @@
 		}
 
 		&__item {
-			font-size: 40px;
+			font-size: var(--fz-40);
 			font-weight: 900;
-			color: black;
+			color: var(--black);
 		}
 
 		&__link {

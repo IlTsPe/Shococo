@@ -1,11 +1,17 @@
 :root {
 	/* базовые */
-	--font-family: 'NunitoSans', sans-serif;
+	--font-family: 'Santello', sans-serif;
 	--main-font-size: 18px;
 
 	/* цвета */
 	--white: #fdfdfd;
-	--saffron: #f2be22;
-	--wheat: #f5d9be;
+	--black: #000;
+	--main-color: #5c2e0d;
+	--wheat: #e7c09c;
 	--invalid-color: rgb(207, 84, 84);
+
+	/* р-р шрифтов */
+	--fz-90: clamp(3.125rem, 2.625rem + 2.5vw, 5.625rem);
+	--fz-40: clamp(2.188rem, 2.125rem + 0.31vw, 2.5rem);
+	--fz-32: clamp(1.563rem, 1.475rem + 0.44vw, 2rem);
 }

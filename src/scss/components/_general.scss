@@ -3,17 +3,8 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible {
 	// outline: solid 2px red;
-	box-shadow: 0 0 7px var(--saffron);
 	outline-offset: 3px;
 	transition: .15s;
-}
-
-.container-flex {
-	display: flex;
-
-	&--space-btw {
-		justify-content: space-between;
-	}
 }
 
 .sub-title {
@@ -25,8 +16,8 @@ select:focus-visible {
 .close-btn {
 	display: none;
 	position: absolute;
-	top: 16px;
-	right: 7%;
+	top: 25px;
+	right: 13px;
 	width: 24px;
 	height: 24px;
 	cursor: pointer;
@@ -57,4 +48,25 @@ select:focus-visible {
 			transform: translateY(-50%) rotate(-45deg);
 		}
 	}
+}
+
+.order-btn {
+	margin-top: auto;
+	padding: 12px 53px;
+	width: 100%;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 4px;
+	background-color: #8e9ceb;
+	transition: background-color 0.2s ease-in-out;
+
+	@media(hover:hover) {
+		&:hover {
+			background-color: #3f51b6;
+		}
+	}
+}
+
+.drop-shadow {
+	box-shadow: 0 0 10px var(--black);
 }
