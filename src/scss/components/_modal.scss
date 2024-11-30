@@ -14,10 +14,10 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 100%;
+		width: 95%;
 		max-width: 450px;
 		border-radius: 10px;
-		background-color: #e4ae7b;
+		background-color: var(--wheat);
 		overflow: hidden;
 		text-align: center;
 	}
@@ -35,11 +35,9 @@
 
 	input,
 	select {
+		padding: 10px;
 		width: 100%;
 		border-radius: 5px;
-		font-size: 18px;
-		padding: 10px;
-		font-weight: 500;
 	}
 
 	input {
@@ -53,7 +51,6 @@
 		background-color: rgb(92, 92, 92) !important;
 		cursor: default;
 	}
-
 
 	&__input-field {
 		position: relative;
@@ -70,14 +67,12 @@
 
 	&__close-btn {
 		.close-btn__line {
-			background: black;
+			background: var(--black);
 		}
 	}
 }
 
-.success-modal,
-.fault-modal {
-	display: none;
+.status-modal {
 	opacity: 0;
 	visibility: hidden;
 
@@ -89,6 +84,7 @@
 	height: 100%;
 	z-index: 201;
 	background-color: rgba(0, 0, 0, .3);
+	transition: 0.15s ease-in-out;
 
 	transition: linear .2s;
 
@@ -114,18 +110,18 @@
 	}
 
 	&--active {
-		display: block;
 		opacity: 1;
 		visibility: visible;
+		transition: 0.2s ease-in-out;
 	}
-}
 
-.success-modal__container {
-	background-color: rgb(142, 233, 115);
-	border: solid 5px rgb(15, 150, 44);
-}
+	.success-modal__container {
+		background-color: rgb(142, 233, 115);
+		border: solid 5px rgb(15, 150, 44);
+	}
 
-.fault-modal__container {
-	background-color: rgb(241, 138, 138);
-	border: solid 5px rgb(167, 64, 64);
+	.fault-modal__container {
+		background-color: rgb(241, 138, 138);
+		border: solid 5px rgb(167, 64, 64);
+	}
 }

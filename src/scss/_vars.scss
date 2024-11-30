@@ -12,6 +12,12 @@
 
 	/* р-р шрифтов */
 	--fz-90: clamp(3.125rem, 2.625rem + 2.5vw, 5.625rem);
+	--fz-60: clamp(2.5rem, 2.25rem + 1.25vw, 3.75rem);
 	--fz-40: clamp(2.188rem, 2.125rem + 0.31vw, 2.5rem);
 	--fz-32: clamp(1.563rem, 1.475rem + 0.44vw, 2rem);
+	--fz-20: 20px;
+	--fz-16: 16px;
+
+	/* отступы секций */
+	--section-indent: clamp(3.125rem, 2.5rem + 3.13vw, 6.25rem);
 }

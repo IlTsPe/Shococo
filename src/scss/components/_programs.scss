@@ -1,44 +1,19 @@
 .programs {
-	padding-block: 60px;
-	background-image: url(../img/fontain.webp);
+	padding: var(--section-indent) 0;
+	background-image: url(../img/gold2-bg.webp);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-color: var(--main-color);
 
 	&__title {
-		padding-top: 20px;
-		padding-bottom: 40px;
 		display: block;
 		color: var(--white);
 	}
 
 	&__products {
-		margin-bottom: 50px;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-evenly;
 		gap: 30px;
-	}
-
-	&__list {
-		padding-bottom: 40px;
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 40px;
-		align-items: center;
-	}
-
-	&__item {
-		width: 100%;
-		max-width: 250px;
-
-		button {
-			transition: all 0.2s ease-in-out;
-
-			&:hover {
-				scale: 1.03;
-				filter: drop-shadow(0 0 5px rgb(53, 53, 53));
-			}
-		}
 	}
 }

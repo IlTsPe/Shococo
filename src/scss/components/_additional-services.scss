@@ -1,12 +1,12 @@
 .additional-services {
-	padding-block: 150px;
+	padding: var(--section-indent) 0;
 
 	&__list {
 		display: flex;
 		justify-content: space-evenly;
 		flex-wrap: wrap;
-		gap: 20px;
 		align-items: center;
+		gap: 20px;
 	}
 
 	&__item {
@@ -17,8 +17,24 @@
 		min-width: 280px;
 		background-color: rgb(244, 217, 189);
 		border-radius: 10px;
-		box-shadow: 0 0 10px rgb(131, 131, 131);
 		text-align: center;
+
+		@media (max-width: 950px) {
+			max-width: 280px;
+			min-width: 250px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				width: 30px;
+				height: 30px;
+				background-image: url(../img/touching.webp);
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		}
 
 		&:hover &-img {
 			filter: blur(7px);

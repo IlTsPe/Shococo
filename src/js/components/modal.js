@@ -56,7 +56,7 @@ const generateModalForm = (name) => {
 };
 
 const openModal = function (name) {
-	body.insertAdjacentHTML('afterbegin', generateModalForm(name))
+	body.insertAdjacentHTML('afterbegin', generateModalForm(name));
 	body.classList.add('body--modal');
 };
 

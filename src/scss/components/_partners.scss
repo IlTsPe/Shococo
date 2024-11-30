@@ -1,17 +1,26 @@
 .partners {
-	padding-block: 80px;
-	background-color: gray;
+	padding: var(--section-indent) 0;
+	background-image: url(../img/bg_2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-color: var(--main-color);
+
+	&__title {
+		color: var(--white);
+	}
 
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: space-evenly;
 		gap: 20px;
 	}
 
 	&__item {
-		width: 230px;
-		height: 230px;
+		padding: 15px;
+		width: 200px;
+		height: 200px;
 		background-color: var(--white);
 		display: flex;
 		align-items: center;
@@ -19,10 +28,15 @@
 		box-shadow: 0 0 7px;
 		overflow: hidden;
 
+		@media (max-width: 550px) {
+			width: 150px;
+			height: 150px;
+		}
+
 		img {
 			display: block;
 			margin: 0 auto;
-			width: 90%;
+			width: 100%;
 			object-fit: cover;
 		}
 	}
