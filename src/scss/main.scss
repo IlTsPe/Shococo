@@ -4,18 +4,30 @@ html {
 	scrollbar-gutter: stable;
 }
 
+input,
+select {
+	font-size: 18px;
+
+	@media (max-width:500px) {
+		font-size: 16px;
+	}
+}
+
+// * {
+// 	outline: solid 2px red;
+// }
+
 // базовые подключения
 @import "./vendor/normalize";
 @import "vars";
 @import "mixins";
 @import "fonts";
-@import "settings";
 
 body {
 	position: relative;
 	font-family: var(--font-family);
 	font-weight: 500;
-	font-size: var(--main-font-size);
+	font-size: var(--fz-18);
 	background-color: var(--white);
 	color: var(--black);
 }
@@ -32,16 +44,15 @@ body {
 
 // подключения компонентов страницы
 @import "./components/general";
-@import "./components/block-animation";
 @import "./components/header";
 @import "./components/hero";
 @import "./components/about";
 @import "./components/programs";
-@import "./components/404";
 @import "./components/burger";
 @import "./components/modal";
 @import "./components/product";
 @import "./components/popup";
 @import "./components/additional-services";
+@import "./components/gallery";
 @import "./components/partners";
-@import "./components/contacts";
+@import "./components/footer";

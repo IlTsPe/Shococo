@@ -1,11 +1,12 @@
 <section class="programs" id="programs">
-	<div class="container" data-animation>
+	<div class="container programs__container" data-animation>
 		<h2 class="sub-title programs__title">Наши услуги</h2>
 		<ul class="programs__products">
 			<li>
 				<article class="product">
 					<div class="product__img">
-						<img src="img/elya.jpg" alt="Фото продукта">
+						<img src="img/elya.jpg" alt="Фото продукта" class="lazy-blur"
+							srcset="img/elya.webp" data-src="img/elya.webp" loading="lazy">
 					</div>
 					<h3 class="product__title">Маленький шоколадный фонтан (60 см) 3
 						яруса от 20 до 40 чел.</h3>
@@ -40,7 +41,8 @@
 			<li>
 				<article class="product">
 					<div class="product__img">
-						<img src="img/2.jpg" alt="Фото продукта">
+						<img src="img/2.jpg" alt="Фото продукта" class="lazy-blur"
+							srcset="img/2.webp" data-src="img/2.webp" loading="lazy">
 					</div>
 					<h3 class="product__title">Средний шоколадный фонтан (80 см) 3
 						яруса от 40 до 70 чел.</h3>
@@ -75,7 +77,8 @@
 			<li>
 				<article class="product">
 					<div class="product__img">
-						<img src="img/3.jpg" alt="Фото продукта">
+						<img src="img/3.jpg" alt="Фото продукта" class="lazy-blur"
+							srcset="img/3.webp" data-src="img/3.webp" loading="lazy">
 					</div>
 					<h3 class="product__title">Большой шоколадный фонтан (112 см) 4
 						яруса от 80 до 120 чел.</h3>
@@ -110,5 +113,61 @@
 		</ul>
 		<div class="popup popup-email">введите email полностью</div>
 		<div class="popup popup-phone">введите телефон полностью</div>
+	</div>
+
+	<div class="additional-services" id="additional-services" data-animation>
+		<div class="container additional-services__container">
+			<h2 class="sub-title additional-services__title">Доп. услуги</h2>
+			<ul class="additional-services__list">
+				<li class="additional-services__item drop-shadow">
+					<img src="img/popcorn.webp" class="additional-services__item-img lazy-blur"
+						srcset="img/popcorn.webp" data-src="img/popcorn.webp"
+						alt="Иконка ваты" loading="lazy">
+					<div class="additional-services__item-container">
+						<h3 class="additional-services__item-title">Попкорн</h3>
+						<p class="additional-services__item-descr">
+							Карамельный/соленый и др. вкусы, 2ч. работы
+						</p>
+						<a href="https://t.me/sofagruzdeva" class="order-btn">Заказать</a>
+					</div>
+				</li>
+				<li class="additional-services__item drop-shadow">
+					<img src="img/cotton.webp" class="additional-services__item-img lazy-blur"
+						srcset="img/cotton.webp" data-src="img/cotton.webp"
+						alt="Иконка ваты" loading="lazy">
+					<div class="additional-services__item-container">
+						<h3 class="additional-services__item-title">Сахарная вата</h3>
+						<p class="additional-services__item-descr">
+							2ч. работы + доп. вкусы
+						</p>
+						<a href="https://t.me/sofagruzdeva" class="order-btn">Заказать</a>
+					</div>
+				</li>
+				<li class="additional-services__item drop-shadow">
+					<img src="img/mulled.webp" class="additional-services__item-img lazy-blur"
+						srcset="img/mulled.webp" data-src="img/mulled.webp"
+						alt="Иконка ваты" loading="lazy">
+					<div class="additional-services__item-container">
+						<h3 class="additional-services__item-title">Глинтвейн</h3>
+						<p class="additional-services__item-descr">
+							По договоренности
+						</p>
+						<a href="https://t.me/sofagruzdeva" class="order-btn">Заказать</a>
+					</div>
+				</li>
+				<li class="additional-services__item drop-shadow">
+					<img src="img/waffles.webp" class="additional-services__item-img lazy-blur"
+						srcset="img/waffles.webp" data-src="img/waffles.webp"
+						alt="Иконка ваты" loading="lazy">
+					<div class="additional-services__item-container">
+						<h3 class="additional-services__item-title">Гонконгские вафли</h3>
+						<p class="additional-services__item-descr">
+							По договоренности
+						</p>
+						<a href="https://t.me/sofagruzdeva" class="order-btn">Заказать</a>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </section>

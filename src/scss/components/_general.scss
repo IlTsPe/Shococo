@@ -2,7 +2,6 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible {
-	// outline: solid 2px red;
 	outline-offset: 3px;
 	transition: .15s;
 }
@@ -69,4 +68,32 @@ select:focus-visible {
 
 .drop-shadow {
 	box-shadow: 0 0 10px var(--black);
+}
+
+.main-link {
+	font-size: var(--fz-40);
+	margin-bottom: 10px;
+	transition: ease-in-out .15s;
+
+	@media (hover:hover) {
+		&:hover {
+			color: var(--wheat);
+		}
+	}
+}
+
+.lazy-blur {
+	-webkit-filter: blur(4px);
+	filter: blur(4px);
+}
+
+
+[data-animation] {
+	transition: all ease-in-out 0.5s;
+}
+
+.appearance {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(6rem);
 }

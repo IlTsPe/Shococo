@@ -13,18 +13,19 @@
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		justify-content: center;
+		column-gap: 40px;
 		gap: 20px;
 	}
 
 	&__item {
-		padding: 15px;
-		width: 200px;
-		height: 200px;
+		padding: 10px;
+		width: 165px;
+		height: 165px;
 		background-color: var(--white);
 		display: flex;
 		align-items: center;
-		border-radius: 10px;
+		border-radius: 100%;
 		box-shadow: 0 0 7px;
 		overflow: hidden;
 
@@ -36,7 +37,7 @@
 		img {
 			display: block;
 			margin: 0 auto;
-			width: 100%;
+			width: 90%;
 			object-fit: cover;
 		}
 	}

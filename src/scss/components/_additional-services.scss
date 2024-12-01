@@ -1,5 +1,9 @@
 .additional-services {
-	padding: var(--section-indent) 0;
+	margin-top: 60px;
+
+	&__title {
+		color: var(--white);
+	}
 
 	&__list {
 		display: flex;

@@ -45,19 +45,5 @@
 		letter-spacing: 1px;
 	}
 
-	&__phone {
-		font-size: var(--fz-40);
-		margin-bottom: 10px;
-	}
 
-	a {
-		display: block;
-		transition: ease-in-out .15s;
-
-		@media (hover:hover) {
-			&:hover {
-				color: var(--wheat);
-			}
-		}
-	}
 }
