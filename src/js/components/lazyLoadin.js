@@ -4,7 +4,6 @@ const loadImg = function (entries, observer) {
 	entries.forEach(item => {
 		if (!item.isIntersecting) return
 		item.target.srcset = item.target.dataset.src;
-		item.target.addEventListener('load', () => item.target.classList.remove('lazy-blur'));
 		observer.unobserve(item.target);
 	})
 };
