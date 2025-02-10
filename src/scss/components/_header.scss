@@ -7,8 +7,14 @@
 	right: 0;
 	transition: all ease-in 0.2s;
 
+	.logo {
+		display: block;
+		width: 85px;
+		transition: width 0.2s ease-in;
+	}
+
 	&-fixed {
-		padding: 8px 0;
+		padding: 13px 0;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -16,17 +22,16 @@
 		background-color: var(--main-color);
 		box-shadow: 0px 5px 10px rgb(126, 70, 54);
 		z-index: 99;
+
+		& .logo {
+			width: 60px;
+		}
 	}
 
 	&__container {
 		@include flex-between-center;
 		flex-wrap: wrap;
 		transition: all linear 0.2s;
-	}
-
-	.logo {
-		display: block;
-		width: 85px;
 	}
 }
 
